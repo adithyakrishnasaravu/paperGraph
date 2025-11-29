@@ -1,4 +1,4 @@
-**Gaussian Splatting Research Knowledge Graph** 
+## Gaussian Splatting Research Knowledge Graph
 
 An agentic system that extracts semantic relationships from academic papers and builds a queryable knowledge graph in Postgres.
 
@@ -150,3 +150,4 @@ Full documentation including:
 See docs/DOCUMENTATION.md
 
 - Adithya Saravu - AI Engineer candidate for Alaris Security
+
