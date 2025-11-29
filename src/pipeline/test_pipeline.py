@@ -8,17 +8,22 @@ from src.agents.extraction_agent import ExtractionAgent
 from src.database.graph_db import GraphDatabase
 
 
-def process_all_papers():
+def process_all_papers(start_index=0, batch_size=10):
     agent = ExtractionAgent()
     data_dir = Path('data/raw')
     pdfs = list(data_dir.glob('*.pdf'))
 
+    # Select batch
+    end_idx = min(start_index + batch_size, len(pdfs))
+    batch = pdfs[start_index:end_idx]
+
     print(f"Found {len(pdfs)} PDFs\n")
+    print(f"Processing batch: indices {start_index}-{end_idx-1} ({len(batch)} papers)\n")
 
     with GraphDatabase() as db:
-        for pdf_path in pdfs:
+        for i, pdf_path in enumerate(batch, start=start_index):
             print("\n" + "="*80)
-            print(f"Processing: {pdf_path.name}")
+            print(f"[{i+1}/{len(pdfs)}] Processing: {pdf_path.name}")
             print("="*80)
 
             # 1) Extract text
@@ -49,12 +54,12 @@ def process_all_papers():
                 method_nodes[m] = db.get_or_create_node("Method", {"name": m})
 
             dataset_nodes = {}
-            for d in entities.get("Dataset", []):
+            for d in entities.get("datasets", []):
                 dataset_nodes[d] = db.get_or_create_node("Dataset", {"name": d})
 
             metric_nodes = {}
             for m in entities.get("metrics", []):
-                metric_nodes[m] = db.get_or_create_node("Metrics", {"name": m})
+                metric_nodes[m] = db.get_or_create_node("Metric", {"name": m})
 
             name_to_id = {
                 metadata["title"]: paper_node_id,
@@ -77,4 +82,11 @@ def process_all_papers():
                     confidence=rel.get("confidence", 1.0),
                 )
 if __name__ == "__main__":
-    process_all_papers()
+    import sys
+    
+    # Read command line args or use defaults
+    start = int(sys.argv[1]) if len(sys.argv) > 1 else 0
+    batch = int(sys.argv[2]) if len(sys.argv) > 2 else 10
+    
+    process_all_papers(start, batch)
+
