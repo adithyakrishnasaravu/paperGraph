@@ -38,7 +38,7 @@ gaussian_splatting_graph/
 ├── sql/
 │   └── schema.sql         # Database schema definition
 ├── docs/
-│   └── DOCUMENTATION.md   # Full design documentation
+│   └── DOCUMENTATION.pdf   # Full design documentation
     ├── README.md          # Readme file
     └── imp_image.png      # Architecture diagram of the system
 └── requirements.txt
@@ -113,7 +113,7 @@ WHERE nt.type_name = 'Dataset'
 GROUP BY d.properties->>'name'
 ORDER BY usage_count DESC;
 ```
-More examples in ```docs/DOCUMENTATION.md```:
+More examples in ```docs/DOCUMENTATION.pdf```:
 
 **Architecture**
 
@@ -153,9 +153,10 @@ Full documentation including:
 - Scalability and limitations
 - Example queries and results
 
-See docs/DOCUMENTATION.md
+See docs/DOCUMENTATION.pdf
 
 **- Adithya Saravu**
+
 
 
 
