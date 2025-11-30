@@ -29,7 +29,7 @@ This project processes Gaussian Splatting research papers to extract:
 ```text
 gaussian_splatting_graph/
 ├── data/
-│   └── raw/               # PDF papers (not committed)
+│   └── raw/               # PDF papers (49 of them)
 ├── src/
 │   ├── agents/            # LLM extraction agents
 │   ├── parsers/           # PDF text extraction
@@ -39,7 +39,10 @@ gaussian_splatting_graph/
 │   └── schema.sql         # Database schema definition
 ├── docs/
 │   └── DOCUMENTATION.md   # Full design documentation
+    ├── README.md          # Readme file
+    └── imp_image.png      # Architecture diagram of the system
 └── requirements.txt
+└── .gitignore
 ```
 
 **Setup**
@@ -152,7 +155,7 @@ Full documentation including:
 
 See docs/DOCUMENTATION.md
 
-- Adithya Saravu - AI Engineer candidate for Alaris Security
+**- Adithya Saravu**
 
 
 
