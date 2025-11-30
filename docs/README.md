@@ -69,7 +69,7 @@ OPENAI_API_KEY=sk-your-key-here
 ```
 
 3. **Set up the database**
-- Create a Supabase project at [https://supabase.com](url)
+- Create a Supabase project at [https://supabase.com/](url)
 - Run ```sql/schema.sql``` in the SQL Editor
 - Update ```.env``` with your connection details
 
@@ -87,6 +87,10 @@ Process in batches (10 papers at a time):
 ```bash
 python src/pipeline/test_pipeline.py 0 10   # Papers 0-9
 python src/pipeline/test_pipeline.py 10 10  # Papers 10-19
+python src/pipeline/test_pipeline.py 20 10  # Papers 11-20
+python src/pipeline/test_pipeline.py 30 10  # Papers 21-30
+python src/pipeline/test_pipeline.py 40 10  # Papers 31-40
+python src/pipeline/test_pipeline.py 50 10  # Papers 41-50
 ```
 
 **Query the graph**: Example queries in Supabase SQL Editor:
@@ -156,6 +160,7 @@ Full documentation including:
 See docs/DOCUMENTATION.pdf
 
 **- Adithya Saravu**
+
 
 
 
