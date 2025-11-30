@@ -48,7 +48,7 @@ gaussian_splatting_graph/
 **Setup**
 1. **Clone and install dependencies**
 ```bash
-git clone <link>
+git clone <https://github.com/adithyakrishnasaravu/GaussianSplatting.git>
 cd gaussian_splatting_graph
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
@@ -156,6 +156,7 @@ Full documentation including:
 See docs/DOCUMENTATION.pdf
 
 **- Adithya Saravu**
+
 
 
 
