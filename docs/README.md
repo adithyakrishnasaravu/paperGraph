@@ -115,12 +115,15 @@ More examples in ```docs/DOCUMENTATION.md```:
 **Architecture**
 
 ```text
-PDFs → PDFParser → ExtractionAgent (LLM) → GraphDatabase → Postgres
-                         ↓
-                   Entities + Relationships
-                         ↓
-                   Queryable Graph
+PDFs → PDFParser → ExtractionAgent → GraphDatabase → Postgres → Queries
+         │              │                  │              │
+    Extract text    metadata          nodes/edges    SQL queries
+                    entities
+                    relationships
 ```
+
+![Diagram](docs/imp_image.png)
+
 
 **Key Design Decisions**
 - Typed property graph in Postgres (flexible JSONB + relational tables)
@@ -150,4 +153,5 @@ Full documentation including:
 See docs/DOCUMENTATION.md
 
 - Adithya Saravu - AI Engineer candidate for Alaris Security
+
 
