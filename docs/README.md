@@ -122,7 +122,7 @@ PDFs → PDFParser → ExtractionAgent → GraphDatabase → Postgres → Querie
                     relationships
 ```
 
-![Diagram](docs/imp_image.png)
+<img width="1408" height="736" alt="image" src="https://github.com/user-attachments/assets/4b5e54da-998a-41d6-9a3a-5574e7cb3119" />
 
 
 **Key Design Decisions**
@@ -153,5 +153,6 @@ Full documentation including:
 See docs/DOCUMENTATION.md
 
 - Adithya Saravu - AI Engineer candidate for Alaris Security
+
 
 
