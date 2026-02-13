@@ -1,4 +1,4 @@
-## Gaussian Splatting Research Knowledge Graph
+## Paper Graph
 
 An agentic system that extracts semantic relationships from academic papers and builds a queryable knowledge graph in Postgres.
 
@@ -160,6 +160,7 @@ Full documentation including:
 See docs/DOCUMENTATION.pdf
 
 **- Adithya Saravu**
+
 
 
 
